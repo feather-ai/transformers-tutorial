@@ -35,6 +35,6 @@ class Encoder(nn.Module):
         for encoder in self.encoders:
             encoding, encoder_attention_weights = encoder(encoding, mask)
             # shape(encoding) = [B x SRC_seq_len x D]
-            # shape(encoder_attention_weights) = [B x SRC_seq_len x SRC_seq_len]
+            # shape(encoder_attention_weights) = [B x num_heads x SRC_seq_len x SRC_seq_len]
 
         return encoding, encoder_attention_weights
